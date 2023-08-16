@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  web:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+
+  node:
+    image: node:alpine
+    volumes:
+      - ./:/app  
+    working_dir: /app
+    command: npm install
