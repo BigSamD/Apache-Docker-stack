@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  php:
+    image: php:7.4-fpm
+    volumes:
+     - ./src:/var/www/html
+
+  apache:
+    image: httpd:latest
+    ports:
+      - "8080:80" 
+    volumes:
+      - ./src:/var/www/html
+      - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    depends_on:
+      - php
