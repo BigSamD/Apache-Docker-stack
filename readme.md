@@ -1,9 +1,8 @@
-
 # Docker Compose for a Web Application
 
 This docker-compose.yml file defines two services, web and node, to create a simple web application.
 
-## Services
+## Services NGIX
 
 ### web
 
